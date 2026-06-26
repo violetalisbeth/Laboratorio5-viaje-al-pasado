@@ -1,0 +1,965 @@
+{
+	"log": {
+		"version": "1.2",
+		"creator": {
+			"name": "Insomnia REST Client",
+			"version": "insomnia.desktop.app:v12.6.0"
+		},
+		"entries": [
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 34.288,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:07:37 GMT"
+						}
+					],
+					"content": {
+						"size": 557,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T22:07:37.2109481\",\"data\":{\"content\":[{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}],\"page\":0,\"size\":10,\"totalElements\":3,\"totalPages\":1,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 34.288,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "obtener todos nuevo"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 34.677,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getBy/11111111-1111-1111-1111-111111111111",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 404,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:06:24 GMT"
+						}
+					],
+					"content": {
+						"size": 166,
+						"mimeType": "application/json",
+						"text": "{\"message\":\"Specimen not found in Hyrule Records\",\"status\":404,\"time\":\"2026-05-23T22:06:24.7908388\",\"uri\":\"/api/specimens/getBy/11111111-1111-1111-1111-111111111111\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 34.677,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "error 404"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 47.695,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/api/specimens/delete/945132c0-c5b9-4fa8-b758-92a4eedb579b",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:05:37 GMT"
+						}
+					],
+					"content": {
+						"size": 295,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/delete/945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"message\":\"Specimen deleted successfully\",\"status\":200,\"time\":\"2026-05-23T22:05:37.7284878\",\"data\":{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Blue Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":4,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 47.695,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "eliminar"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 70.99900000000001,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8080/api/specimens/update/945132c0-c5b9-4fa8-b758-92a4eedb579b",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"name\": \"Blue Bokoblin\",\n  \"region\": \"Hyrule Field\",\n  \"dangerLevel\": 4,\n  \"isFriendly\": false\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:04:44 GMT"
+						}
+					],
+					"content": {
+						"size": 295,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/update/945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"message\":\"Specimen updated successfully\",\"status\":200,\"time\":\"2026-05-23T22:04:44.3233404\",\"data\":{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Blue Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":4,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 70.99900000000001,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "actualizar id"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 49.577000000000005,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getBy/945132c0-c5b9-4fa8-b758-92a4eedb579b",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:03:29 GMT"
+						}
+					],
+					"content": {
+						"size": 278,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getBy/945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"message\":\"Specimen found\",\"status\":200,\"time\":\"2026-05-23T22:03:29.1827216\",\"data\":{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 49.577000000000005,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "obtener por id"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 15.703000000000001,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll?page=0&size=10&sortBy=dangerLevel&sortOrder=desc",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:01:58 GMT"
+						}
+					],
+					"content": {
+						"size": 684,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T22:01:58.5263031\",\"data\":{\"content\":[{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false},{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}],\"page\":0,\"size\":10,\"totalElements\":4,\"totalPages\":1,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 15.703000000000001,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "ordenar por peligro"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 17.851,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll?page=0&size=10&sortBy=name&sortOrder=desc",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:01:36 GMT"
+						}
+					],
+					"content": {
+						"size": 684,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T22:01:36.8773565\",\"data\":{\"content\":[{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true},{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false},{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false}],\"page\":0,\"size\":10,\"totalElements\":4,\"totalPages\":1,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 17.851,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "ordenar por nombre desc"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 13.68,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll?page=0&size=10&sortBy=name&sortOrder=asc",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 04:00:55 GMT"
+						}
+					],
+					"content": {
+						"size": 684,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T22:00:55.2651683\",\"data\":{\"content\":[{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false},{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}],\"page\":0,\"size\":10,\"totalElements\":4,\"totalPages\":1,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 13.68,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "ordenar por nombre asc"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 8.76,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll?page=1&size=2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:59:28 GMT"
+						}
+					],
+					"content": {
+						"size": 437,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T21:59:28.6248208\",\"data\":{\"content\":[{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false},{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}],\"page\":1,\"size\":2,\"totalElements\":4,\"totalPages\":2,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 8.76,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "obtener paginacion"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 71.536,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll?page=0&size=2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:58:44 GMT"
+						}
+					],
+					"content": {
+						"size": 440,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T21:58:44.9576318\",\"data\":{\"content\":[{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false}],\"page\":0,\"size\":2,\"totalElements\":4,\"totalPages\":2,\"last\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 71.536,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "obtener paginacion"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 383.563,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/api/specimens/getAll",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:50:16 GMT"
+						}
+					],
+					"content": {
+						"size": 684,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/getAll\",\"message\":\"Specimens found\",\"status\":200,\"time\":\"2026-05-23T21:50:16.1000178\",\"data\":{\"content\":[{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false},{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false},{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}],\"page\":0,\"size\":10,\"totalElements\":4,\"totalPages\":1,\"last\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 383.563,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "obtener todos"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 7.705,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/api/specimens/create",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"name\": \"Zora\",\n  \"region\": \"Zora Domain\",\n  \"dangerLevel\": 2,\n  \"isFriendly\": true\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:48:52 GMT"
+						}
+					],
+					"content": {
+						"size": 247,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/create\",\"message\":\"Specimen created successfully\",\"status\":201,\"time\":\"2026-05-23T21:48:52.0819817\",\"data\":{\"id\":\"cd8d5e83-f586-42d1-b38b-816ba1d86062\",\"name\":\"Zora\",\"region\":\"Zora Domain\",\"dangerLevel\":2,\"isFriendly\":true}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 7.705,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "create specimen"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 34.733,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/api/specimens/create",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"name\": \"Lizalfos\",\n  \"region\": \"Lanayru Wetlands\",\n  \"dangerLevel\": 5,\n  \"isFriendly\": false\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:48:27 GMT"
+						}
+					],
+					"content": {
+						"size": 257,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/create\",\"message\":\"Specimen created successfully\",\"status\":201,\"time\":\"2026-05-23T21:48:27.8783257\",\"data\":{\"id\":\"945132c0-c5b9-4fa8-b758-92a4eedb579b\",\"name\":\"Lizalfos\",\"region\":\"Lanayru Wetlands\",\"dangerLevel\":5,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 34.733,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "create specimen"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 12.038,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/api/specimens/create",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.6.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"name\": \"Bokoblin\",\n  \"region\": \"Hyrule Field\",\n  \"dangerLevel\": 3,\n  \"isFriendly\": false\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:43:08 GMT"
+						}
+					],
+					"content": {
+						"size": 253,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/create\",\"message\":\"Specimen created successfully\",\"status\":201,\"time\":\"2026-05-23T21:43:08.1099116\",\"data\":{\"id\":\"1b219476-1ccf-41a2-ac94-d80b2e8b910b\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 12.038,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "create specimen"
+			},
+			{
+				"startedDateTime": "2026-05-24T04:19:29.920Z",
+				"time": 691.825,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/api/specimens/create",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/12.5.0"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"name\": \"Bokoblin\",\n  \"region\": \"Hyrule Field\",\n  \"dangerLevel\": 3,\n  \"isFriendly\": false\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 24 May 2026 03:32:38 GMT"
+						}
+					],
+					"content": {
+						"size": 252,
+						"mimeType": "application/json",
+						"text": "{\"uri\":\"/api/specimens/create\",\"message\":\"Specimen created successfully\",\"status\":201,\"time\":\"2026-05-23T21:32:38.870301\",\"data\":{\"id\":\"40e6f82a-aaa3-4dd6-9529-e1d0db8aab41\",\"name\":\"Bokoblin\",\"region\":\"Hyrule Field\",\"dangerLevel\":3,\"isFriendly\":false}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 691.825,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "create specimen"
+			}
+		]
+	}
+}
