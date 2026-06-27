@@ -1,0 +1,65 @@
+services:
+
+  # Servicio 1: PostgreSQL
+  db:
+    image: postgres:16-alpine
+    container_name: laboratorio3-db
+    restart: always
+
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - laboratorio3-db-data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - laboratorio3-network
+
+
+  # Servicio 2: aplicación Spring Boot
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: laboratorio3-api
+    restart: on-failure
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    environment:
+      DB_URL: "jdbc:postgresql://db:5432/${DATABASE_NAME}"
+      DB_USERNAME: ${DATABASE_USERNAME}
+      DB_PASSWORD: ${DATABASE_PASSWORD}
+
+    ports:
+      - "8080:8080"
+
+    networks:
+      - laboratorio3-network
+
+
+networks:
+  laboratorio3-network:
+
+
+volumes:
+  laboratorio3-db-data:
+    driver: local

@@ -1,0 +1,17 @@
+target/
+.git/
+.github/
+.idea/
+.vscode/
+
+*.iml
+*.log
+
+.env
+
+HELP.md
+insomnia/
+
+Dockerfile*
+docker-compose*
+README*
