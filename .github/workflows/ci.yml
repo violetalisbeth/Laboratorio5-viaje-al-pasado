@@ -1,0 +1,136 @@
+  ```yaml
+  name: CI - Build, Tests and Smoke Test
+
+  # Acciones que ejecutarán el workflow
+  on:
+    push:
+      branches:
+        - main
+
+    pull_request:
+      branches:
+        - main
+
+    # Permite ejecutarlo manualmente desde GitHub
+    workflow_dispatch:
+
+
+  jobs:
+
+    # -----------------------------------------------------
+    # Trabajo 1: compilar y ejecutar las pruebas unitarias
+    # -----------------------------------------------------
+    build-and-test:
+      name: Build and unit tests
+      runs-on: ubuntu-latest
+
+      steps:
+
+        # Descarga el código del repositorio
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        # Configura Java 17
+        - name: Set up JDK 17
+          uses: actions/setup-java@v4
+          with:
+            java-version: "17"
+            distribution: "temurin"
+            cache: "maven"
+
+        # Permiso necesario para ejecutar Maven Wrapper en Linux
+        - name: Grant execute permission to Maven Wrapper
+          run: chmod +x mvnw
+
+        # Compila el proyecto y ejecuta los tests
+        - name: Build and run tests
+          run: ./mvnw clean verify -B
+
+        # Guarda los resultados generados por Surefire
+        - name: Upload test reports
+          if: always()
+          uses: actions/upload-artifact@v4
+          with:
+            name: test-results
+            path: target/surefire-reports/
+            if-no-files-found: warn
+
+
+    # -----------------------------------------------------
+    # Trabajo 2: levantar Docker y probar la aplicación
+    # -----------------------------------------------------
+    smoke-test-compose:
+      name: Smoke test with Docker Compose
+      needs: build-and-test
+      runs-on: ubuntu-latest
+
+      steps:
+
+        # Descarga nuevamente el proyecto para este trabajo
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        # Crea variables exclusivas para CI
+        - name: Create test environment file
+          run: |
+            cat <<'EOF' > .env
+            DATABASE_NAME=laboratorio3_ci
+            DATABASE_USERNAME=ci_user
+            DATABASE_PASSWORD=ci_password
+            EOF
+
+        # Construye y levanta PostgreSQL y Spring Boot
+        - name: Start Docker Compose
+          run: docker compose up --build -d
+
+        # Espera hasta que la aplicación responda
+        - name: Wait for application
+          run: |
+            for i in {1..20}; do
+              if curl -s http://localhost:8080/api/specimens/getAll -o /dev/null; then
+                echo "The application responded correctly."
+                exit 0
+              fi
+            
+              echo "Waiting for the application... ($i/20)"
+              sleep 3
+            done
+            
+            echo "The application never responded on time."
+            exit 1
+
+        # Crea un registro y luego consulta la lista
+        - name: Run smoke test
+          run: |
+            echo "Creating test specimen..."
+            
+            curl --fail --show-error --silent \
+              -X POST \
+              http://localhost:8080/api/specimens/create \
+              -H "Content-Type: application/json" \
+              -d '{
+                "name": "Bokoblin CI",
+                "region": "Central Hyrule",
+                "dangerLevel": 5,
+                "isFriendly": false
+              }'
+            
+            echo ""
+            echo "Consulting registered specimens..."
+            
+            curl --fail --show-error --silent \
+              http://localhost:8080/api/specimens/getAll
+            
+            echo ""
+            echo "Smoke test completed successfully."
+
+        # Muestra los logs solamente cuando algo falla
+        - name: Show Docker logs
+          if: failure()
+          run: docker compose logs
+
+        # Apaga y elimina los contenedores y el volumen
+        - name: Shutdown containers
+          if: always()
+          run: docker compose down -v
+    ```
